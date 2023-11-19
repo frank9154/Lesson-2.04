@@ -24,10 +24,25 @@ final class ViewController: UIViewController {
     }
     
     @IBAction func segmentedControlAction() {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            mainLabel.text = "The first segment is selected"
+            mainLabel.textColor = .red
+        case 1:
+            mainLabel.text = "The second segment is selected"
+            mainLabel.textColor = .yellow
+        // default = case 3
+        default:
+            mainLabel.text = "The third segment is selected"
+            mainLabel.textColor = .green
+        }
     }
     
     @IBAction func sliderAction() {
-        
+        mainLabel.text = slider.value.formatted()
+        // Задаем прозрачность фона. Метод with alpha component позволяет задать новое значение для прозрачности
+        view.backgroundColor = view.backgroundColor?.withAlphaComponent(CGFloat(slider.value))
+        //view.alpha = CGFloat(slider.value)
     }
     
     private func setupMainLabel() {
