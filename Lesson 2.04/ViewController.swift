@@ -9,7 +9,7 @@ import UIKit
 
 final class ViewController: UIViewController {
 
-    @IBOutlet var mainLabel: UIView!
+    @IBOutlet var mainLabel: UILabel!
     @IBOutlet var segmentedControl: UISegmentedControl!
     
     override func viewDidLoad() {
@@ -17,7 +17,7 @@ final class ViewController: UIViewController {
         
         segmentedControl.insertSegment(withTitle: "Third", at: 2, animated: false)
         mainLabel.text = "Main label"
-        mainLabel.font.UIFont.systemFont(ofSize: 35)
+        mainLabel.font = .systemFont(ofSize: 35)
         mainLabel.textAlignment = .center
         mainLabel.numberOfLines = 2
     }
